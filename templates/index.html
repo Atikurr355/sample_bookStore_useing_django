@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+    <div class="container">
+       <div class="row">
+           <div class="col-md-12 col-12 col-xxl-12 text-capitalize my-3 display-4 text-center">
+               The book store
+           </div>
+       </div>
+        {% include 'partials/slider.html' %}
+    </div>
+{% endblock body %}
