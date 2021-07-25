@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Blogs{% endblock title %}
+{% block blogactive %}active{% endblock blogactive %}
+{% block body %}
+<div class="container my-5 text- ">
+    <div class="row ">
+        <div class=" blog-head col-md-8 mx-auto mb-0 bg- rounded-top mb-5 py-2">
+            <h2 class="text-center display-4 htext">All Blogs are Here</h2>
+        </div>
+
+    </div>
+    <div class="row">
+        {% for blog in blogs %}
+        <div class="com-md-12 col-12">
+            <div class="media my-3">
+                <img class="mr-3" src={{blog.image.url}} width="250px" alt="Generic placeholder image">
+                <div class="media-body">
+                    <h5 class="mt-0"><a href="/blogpost/{{blog.slug}}" class="text-dark">{{blog.title}}</a></h5>
+                    {{blog.content|slice:200}} ..... <br>
+                    <button class="btn btn-success my-2"><a href="/blogpost/{{blog.slug}}" class="text-dark">Read More...</a></button>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock  %}
