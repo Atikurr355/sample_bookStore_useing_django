@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'books.apps.BooksConfig',
     'index.apps.IndexConfig',
     'post.apps.PostConfig',
+    'contact.apps.ContactConfig',
 
 ]
 

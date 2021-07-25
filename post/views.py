@@ -14,7 +14,7 @@ def post(request):
     return render(request, 'blog.html',context)
 
 
-def blogpost(request, slug):
+def postdetails(request, slug):
     blog = Blog.objects.filter(slug=slug).first 
     context={
         'blog': blog,

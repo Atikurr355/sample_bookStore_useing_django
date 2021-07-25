@@ -16,9 +16,9 @@
             <div class="media my-3">
                 <img class="mr-3" src={{blog.image.url}} width="250px" height="150px" alt="Generic placeholder image">
                 <div class="media-body">
-                    <h5 class="mt-0"><a href="/post/{{blog.slug}}" class="text-dark">{{blog.title}}</a></h5>
+                    <h5 class="mt-0"><a href="/postdetails/{{blog.slug}}" class="text-dark">{{blog.title}}</a></h5>
                     {{blog.content|safe|slice:200}} ..... <br>
-                    <button class="btn btn-success my-2"><a href="/post/{{blog.slug}}" class="text-dark">Read More...</a></button>
+                    <button class="btn btn-success my-2"><a href="/postdetails/{{blog.slug}}" class="text-dark">Read More...</a></button>
                 </div>
 
             </div>
