@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 from .models import Blog
 from django.core.paginator import Paginator
 
@@ -13,9 +13,10 @@ def post(request):
     }
     return render(request, 'blog.html',context)
 
+
 def blogpost(request, slug):
     blog = Blog.objects.filter(slug=slug).first 
     context={
         'blog': blog,
     }
-    return render(request,"blogpost.html",context)
+    return render(request,"postdetails.html",context)
