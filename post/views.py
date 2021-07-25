@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from .models import Blog
+from django.core.paginator import Paginator
 
 # Create your views here.
 def post(request):
     blogs = Blog.objects.all()
+    paginator = Paginator(blogs,8, orphans=1)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context={
-        'blogs': blogs
+        'page_obj':page_obj,
     }
     return render(request, 'blog.html',context)
 
